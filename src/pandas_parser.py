@@ -13,7 +13,7 @@ class PandasParser:
     def _get_df(self):
         merged_df = []
         for file in self.files:
-            df = pd.read_json(DATA_DIR / file, lines=True)
+            df = pd.read_json(str(file), lines=True)
             merged_df.append(df)
         return pd.concat(merged_df, ignore_index=True)
 
